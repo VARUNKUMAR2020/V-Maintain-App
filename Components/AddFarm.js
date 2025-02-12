@@ -5,6 +5,7 @@ import {
   TextInput,
   Button,
   KeyboardAvoidingView,
+  Platform
 } from "react-native";
 import styles from "../Styles";
 import axios from "axios";
@@ -56,8 +57,7 @@ const AddFarm = ({ URL }) => {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
-      behavior="padding"
-      keyboardVerticalOffset={100} // Adjust this value as needed
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <View style={{ flex: 1 }}>
         <Text style={styles.addFarm}>நிரப்பப்பட வேண்டிய விவரங்கள்</Text>
